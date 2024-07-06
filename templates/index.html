@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Recommendation</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Hotel Recommendation</h1>
+    <form action="/recommend_hotels" method="post">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required><br><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label for="ratings">Minimum Ratings:</label>
+        <input type="number" id="ratings" name="ratings" step="0.01" required><br><br>
+
+        <label for="min_pricing">Minimum Pricing:</label>
+        <input type="number" id="min_pricing" name="min_pricing" step="0.01" required><br><br>
+
+        <label for="max_pricing">Maximum Pricing:</label>
+        <input type="number" id="max_pricing" name="max_pricing" step="0.01" required><br><br>
+
+        <label for="meals_option">Select Meals Option:</label>
+        <select id="meals_option" name="meals_option" required>
+            <option value="all_meals">All meals</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
